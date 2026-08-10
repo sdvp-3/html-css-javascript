@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style></style>
+  </head>
+  <body>
+  
+   <p id="js-show-number"></p>
+    <button onclick="playGame('Heads')">Heads</button>
+
+    <button onclick="playGame('Tails')">Tails</button>
+    <p id="js-generate"></p>
+  
+    <script>
+      /*
+      let nums = [3, 7, 2, 9, 1];
+
+      function findMax(nums) {
+        let max = nums[0];
+
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] > max) {
+            max = nums[i];
+          }
+        }
+        return max;
+      }
+      console.log(findMax([2, 3, 4, 5, 6]));
+
+      function allInOne(nums) {
+        let total = 0;
+
+        for (let i = 0; i < nums.length; i++) {
+          total = total + nums[i];
+        }
+        return total;
+      }
+      console.log(allInOne([1, 2]));
+
+      function findEven(nums) {
+        let result = [];
+
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] % 2 === 0) {
+            result.push(nums[i]);
+          }
+        }
+        return result;
+      }
+      console.log(findEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]));
+
+      function changedMassive(nums) {
+        let result = [];
+
+        for (let i = nums.length - 1; i >= 0; i--) {
+          result.push(nums[i]);
+        }
+        return result;
+      }
+      console.log(changedMassive([1, 2, 3, 4, 5, 6, 7]));
+
+      */
+/*
+      function playGame(playerMove) {
+        const computerMove = pickComputerMove();
+        let result = "";
+
+        if (playerMove === "Heads") {
+          if (computerMove === "Heads") {
+            result = "win";
+          } else {
+            result = "Lose";
+          }
+        } else if (playerMove === "Tails") {
+          if (computerMove === "Tails") {
+            result = "win";
+          } else {
+            result = "Lose";
+          }
+        }
+
+        document.getElementById("js-show-number").innerHTML = result;
+
+        return result;
+      }
+
+      function pickComputerMove() {
+        let computerMove = "";
+        const randomNumber = Math.random();
+        if (randomNumber >= 0 && randomNumber <= 1 / 2) {
+          computerMove = "Heads";
+        } else if (randomNumber >= 1 / 2 && randomNumber < 1) {
+          computerMove = "Tails";
+        }
+
+        document.getElementById("js-generate").innerHTML =
+          `${randomNumber.toFixed(2)}`;
+        return computerMove;
+      }
+      */
+/*
+      let sum=[1,2,3,4,5]
+
+      function sumArr(sum){
+        let total=[];
+
+        for(let i=0; i<sum.length; i++){
+          total.push(String(sum[i]))
+
+         
+        }
+        return total
+      }
+console.log(sumArr([1,2,3,4,5]))
+*/
+/*
+ let sum=[1,2,3,4,5]
+
+      function sumArr(sum){
+        let total=0;
+
+        for(let i=0; i<sum.length; i++){
+          total+=sum[i]
+
+         
+        }
+        return total
+      }
+console.log(sumArr([1,2,3,4,5]))
+*/
+/*
+let sum=[1,2,3,4,5]
+
+      function sumArr(sum){
+        let max=sum[0];
+        let min=sum[0];
+
+        for(let i=0; i<sum.length; i++){
+          
+          if(sum[i]<min){
+            min=sum[i]
+          }
+          if(sum[i]>max){
+            max=sum[i]
+          }
+
+         
+        }
+        return [min ,max]
+      }
+console.log(sumArr([1,2,3,4,5]))
+*/
+/*
+let sum=[1,2,3,4,5]
+
+      function sumArr(sum){
+       let even=[];
+
+        for(let i=0; i<sum.length; i++){
+           
+          if(sum[i]%2===0){
+           even.push(sum[i])
+          }
+          
+        }
+        return even
+      }
+console.log(sumArr([1,2,3,4,5]))
+*/
+/*
+function swapElements(arr, index1, index2) {
+ 
+  let temp=arr[index1]
+  arr[index1]=arr[index2]
+  arr[index2]=temp
+
+  return arr
+
+}
+console.log(swapElements(['anor','behi','olma','nok'],0,3))
+*/
+
+function sameFruits(fruits){
+  let result={};
+
+  for(let i=0; i<fruits.length; i++){
+    let fruit=fruits[i]
+if (result[fruit]){
+  result[fruit]++
+}else {
+  result[fruit]=1
+}
+
+
+
+  }
+  return result;
+  }
+  console.log(sameFruits(["apple","apple","apple","watermelon","watermelon","grape","grape"]))
+
+
+    </script>
+  </body>
+</html>

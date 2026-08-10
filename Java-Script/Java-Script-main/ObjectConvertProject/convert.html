@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <p></p>
+    <input type="text" placeholder="km" class="js-km" />
+    <p></p>
+    <input type="text" placeholder="Mil" class="js-mil" />
+
+    <script>
+      function connectionKMmil() {}
+
+      function kmToMiles(km) {
+        return (km / 1.6).toFixed(2);
+      }
+
+      function milesToKm(Mil) {
+        return (Mil * 1.6).toFixed(2);
+      }
+
+      function convertLength(Length, from, to) {
+        if (from === "Mil" && to === "km") {
+          const result = milesToKm(Length);
+          return `${result},${to}`;
+        } else if (from === "km" && to === "Mil") {
+          const result = kmToMiles(Length);
+          return `${result},${to}`;
+        }
+      }
+
+      console.log(convertLength(1.6, "Mil", "km"));
+      console.log(convertLength(1.6, "km", "Mil"));
+      console.log(convertLength(3.2, "km", "Mil"));
+      console.log(convertLength(3.2, "Mil", "km"));
+    </script>
+  </body>
+</html>

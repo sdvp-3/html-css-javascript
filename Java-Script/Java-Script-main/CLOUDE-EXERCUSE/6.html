@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* 6.  Ikki sonning eng katta umumiy bo'luvchisini top (GCD) */
+
+    function ekubTop(a,b){
+      let ekub=1; //sabab 0 bo'lsa hmmasi 0 bo'ladi javob bo'lmaydi.
+      let small=a<b ? a:b;
+
+      for (let i=1; i<=small; i++){
+        if(a%i===0 && b%i===0){
+          ekub=i;
+        }
+      }
+      return ekub;
+    }
+
+    console.log(ekubTop(424,254))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style></style>
+  </head>
+  <body>
+    <p>To Do List</p>
+
+    <input  placeholder="create a plan"  class="js-input">
+   <input type="date" id="birthday-picker" class="js-data">
+
+    <button onclick=" addTodo()">add</button>
+    <button onclick="removeTodo()">remove</button>
+
+    <div class="js-add" ></div>
+
+    
+    <script>
+      const todoList=[]
+
+      renderTodo()
+   function renderTodo(){
+    
+    let todoListHtml=''
+
+   
+    for(let i=0; i<todoList.length;i++){
+      const todoObject=todoList[i]
+      const name=todoObject.name
+      const date=todoObject.date
+
+      const html=`<p>${name} ${date} <button onclick="todoList.splice(${i},1); renderTodo()">Delete</button></p>`
+      todoListHtml+=html
+    }
+    console.log(todoList)
+document.querySelector('.js-add')
+     .innerHTML=todoListHtml;
+     document.getElementById('birthday-picker').valueAsDate=new Date()
+   }
+
+
+   function addTodo(){
+    
+      const inputElement=document.querySelector('.js-input')
+
+      const name=inputElement.value;
+if(name.length === 0){ return }
+todoList.push(name) // bu faqat bo'sh bo'lmaganda ishlaydi
+      
+
+      inputElement.value=''
+    
+
+
+      renderTodo()
+   }
+
+   function removeTodo(){
+     const inputElement=document.querySelector('.js-input')
+
+      const name=inputElement.value;
+
+      if(name===inputElement.value){
+        const index=todoList.indexOf(name)
+        if(index !==1){
+          todoList.splice(index, 1)
+        }
+      }
+
+    
+
+      inputElement.value=''
+
+
+      renderTodo()
+    }
+
+   
+
+    </script>
+  </body>
+</html>

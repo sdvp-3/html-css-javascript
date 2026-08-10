@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Function Practice</title>
+
+  </head>
+  <body>
+
+
+
+    <script>
+    /*
+    function  convertToFahrenheit(celsius) {
+    return  (celsius*9/5)+32;
+    }
+ 
+    function convertToCelsius(fahrenheit) {
+      return (fahrenheit-32)*5/9;
+    } 
+
+    function convertTemperature(Degrees, unit) {
+      
+ 
+      if (unit==='C')
+
+      {
+        const result=convertToFahrenheit(Degrees)
+        return(`${result}F`)
+      } else if (unit==='F'){
+       const result = convertToCelsius(Degrees);
+       return(`${result}C`);
+      }
+    }
+   
+    console.log(convertTemperature(25,'C'));
+    console.log(convertTemperature(86,'F'));
+    */
+
+  //FUNCTION CONVERTLENGTH PRACTICE
+/*
+  function convertToKilometrs(miles) {
+    return miles*1.6
+  }
+
+  function convetToMiles(kilometrs){
+    return kilometrs/1.6
+  }
+
+
+
+
+  function convertLengs (lengs,from,to)
+   {
+    if(from === to) {
+      // If units are the same, just return the value with the unit
+      return `${lengs}${from === 'miles' ? 'miles' : 'km'}`;
+    }
+    if(from==='miles' && to==='kilometrs') {
+      const result= convertToKilometrs(lengs);
+      return(`${result}km`);
+    } else if (from==='kilometrs' && to==='miles') {
+      const result=convetToMiles(lengs);
+      return(`${result}miles`);
+    }
+  }
+  
+console.log(convertLengs(50,'miles','kilometrs'));
+console.log(convertLengs(32,'kilometrs','miles'));
+console.log(convertLengs(50,'kilometrs','kilometrs'));
+*/
+function milesToKm(miles){
+  return miles*1.6;
+}
+
+function milesToFt(miles) {
+  return miles*5280;
+}
+
+function kmToFt(km){
+  return km*3281;
+}
+
+function milesToMeters(miles){
+  return miles*1600;
+}
+
+function convertLengs2(lengs,from,to,unit) {
+
+if (from !== 'miles' && from !== 'km' && from !== 'ft' && from !=='meters') {
+    return `Invalid unit: ${from}`;
+  }  if (to !== 'miles' && to !== 'km' && to !== 'ft' && to !=='meters') {
+    return `Invalid unit: ${to}`;
+  }
+
+  if (from===to) {
+    return `${lengs}${from==='miles' ? 'miles' : from==='km'? 'km' : 'ft' && from==='miles'? 'miles' : 'meters'}`;
+  } if (from==='miles' && to==='km') {
+    const result =milesToKm(lengs);
+    return `${result}km`;
+  } else if (from==='miles' && to==='ft') {
+    const result=milesToFt(lengs);
+    return `${result}ft`;
+  } else if (from==='km' && to==='ft') {
+    const result=kmToFt(lengs);
+    return `${result}ft`;
+  } else if (from==='miles' && to==='meters') {
+    const result=milesToMeters(lengs);
+    return `${result}m`;
+  }
+  
+}
+console.log(convertLengs2(5,'miles','km'));
+console.log(convertLengs2(5,'miles','ft'));
+console.log(convertLengs2(5,'km','ft'));
+console.log(convertLengs2(5,'miles','meters'));
+
+
+
+
+    </script>
+
+     
+    
+  </body>
+</html>

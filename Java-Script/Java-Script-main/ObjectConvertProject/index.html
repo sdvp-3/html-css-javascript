@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+  <head>
+    <title>KM & MILES CONVERTER</title>
+    <style>
+      .container,
+      .container2,
+      .container3 {
+        border: 1px solid #000000;
+        border-radius: 16px;
+        box-shadow: 1px 2px 10px white;
+      }
+
+      .container,
+      .container2,
+      .container3 {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        margin: 0 auto;
+        height: 250px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .grid-container {
+        position: relative;
+      display: grid;
+ 
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  
+ 
+  max-width: 1200px;
+  min-width: 250px;
+
+  
+  height: auto;
+  
+  margin: 0 auto; 
+  border: 1px solid #d2d1d1;
+  border-radius: 16px;
+  padding: 50px;
+  background-color: #241515;
+  color: white;
+  box-shadow: 1px 2px 10px rgb(255, 255, 255), inset 0px 0px 10px rgb(255, 255, 255);
+      }
+
+      @media (max-width: 900px){
+        .grid-container {
+          grid-template-columns: 1fr;
+          padding-left: 15px;
+           padding-right: 15px;
+         
+        }
+      }
+
+
+      
+      .alert {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+      }
+      body {
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        display: flex;
+        background-color: rgb(56, 50, 50);
+      }
+
+      .label,
+      .label1,
+      .label2 {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 195.44px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        font-size: 12px;
+        color: rgb(67, 85, 66);
+      }
+
+      .text,
+      .text1,
+      .text2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: green;
+      }
+
+      .sign,
+      .sign1 {
+        color: rgb(95, 95, 108);
+        position: absolute;
+        left: 50%; /* ← gorizontal markaz */
+        transform: translateX(-50%); /* ← aniq markaz */
+      }
+
+      .js-km,
+      .js-mil,
+      .js-meter,
+      .js-sq-met,
+      .js-sq-hect,
+      .js-sq-ft,
+      .js-m2,
+      .js-sq-m3,
+      .js-met {
+        border: none;
+        outline: none;
+        color: white;
+        border-radius: 20px;
+        font-size: 10px;
+        padding-left: 10px;
+        width: 173.6px;
+        height: 28px;
+        padding-right: 8px;
+        background-color: rgb(38, 37, 37);
+      }
+      ::placeholder {
+        color: rgb(180, 180, 180);
+      }
+
+      .js-km:hover,
+      .js-mil:hover,
+      .js-meter:hover,
+      .js-sq-met:hover,
+      .js-sq-hect:hover,
+      .js-sq-ft:hover,
+      .js-m2:hover,
+      .js-sq-m3:hover,
+      .js-met:hover {
+        box-shadow: 0px 0px 3px rgb(116, 85, 85);
+        transition: 0.8s;
+        background-color: rgb(52, 52, 52);
+      }
+
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        height: 20px;
+      }
+
+      .js-mode {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 30px;
+        width: 60px;
+        border: none;
+        border-radius: 10px;
+        font-size: 10px;
+      }
+      .grid-container {
+        background-color: #241515;
+        border-color: #d2d1d1;
+        color: white;
+      }
+      .is-dark-mode {
+        background-color: #ffffff;
+        color: black;
+      }
+
+      /* Qo'shing */
+      .is-dark-mode .js-km,
+      .is-dark-mode .js-mil,
+      .is-dark-mode .js-meter,
+      .is-dark-mode .js-sq-met,
+      .is-dark-mode .js-sq-hect,
+      .is-dark-mode .js-sq-ft,
+      .is-dark-mode .js-met,
+      .is-dark-mode .js-m2,
+      .is-dark-mode .js-sq-m3 {
+        color: black;
+        background-color: rgb(220, 220, 220);
+      }
+
+      /* Label rangi ham */
+      .is-dark-mode .label,
+      .is-dark-mode .label1,
+      .is-dark-mode .label2 {
+        color: rgb(40, 60, 40);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <button class="js-mode" onclick="darkMode()">Dark Mode</button>
+      <div class="container">
+        <!-- input dan keyin qo'shing -->
+
+        <p class="text">KM ↔ Miles ↔ Meters</p>
+        <p class="label">Km</p>
+        <input type="number" placeholder="km" class="js-km" />
+        <div class="label">
+          Mil
+          <div class="sign">↕</div>
+        </div>
+        <input type="number" placeholder="miles" class="js-mil" />
+        <div class="label">
+          Met
+          <div class="sign1">↕</div>
+        </div>
+        <input type="number" placeholder="meters" class="js-meter" />
+      </div>
+
+      <div class="container2">
+        <!-- input dan keyin qo'shing -->
+
+        <p class="text1">M&#178; ↔ Hec ↔ Ft&#178;</p>
+        <p class="label1">m&#178;</p>
+        <input type="number" placeholder="m&#178;" class="js-sq-met" />
+        <div class="label1">
+          Hec
+          <div class="sign">↕</div>
+        </div>
+        <input type="number" placeholder="hectares" class="js-sq-hect" />
+        <div class="label1">
+          ft&#178;
+          <div class="sign1">↕</div>
+        </div>
+        <input type="number" placeholder="ft&#178;" class="js-sq-ft" />
+      </div>
+
+      <div class="container3">
+        <!-- input dan keyin qo'shing -->
+
+        <p class="text2">M x M ↔ M&#178;</p>
+        <p class="label2">Side(a) M</p>
+        <input type="number" placeholder="m" class="js-met" />
+        <div class="label2">
+          Side(b) M
+          <div class="sign">↕</div>
+        </div>
+        <input type="number" placeholder="m" class="js-m2" />
+        <div class="label2">
+          M&#178;
+          <div class="sign">↕</div>
+        </div>
+        <input type="number" placeholder="m&#178;" class="js-sq-m3" />
+      </div>
+
+      <p
+        id="alert-box"
+        style="display: none; color: red; font-size: 11px; margin-top: 4px"
+        class="alert"
+      >
+        ⚠️!!! 10 billion or Smaller
+      </p>
+    </div>
+
+    <script>
+      function darkMode() {
+        const div = document.querySelector(".grid-container");
+        const btn = document.querySelector(".js-mode");
+
+        if (div.classList.contains("is-dark-mode")) {
+          div.classList.remove("is-dark-mode");
+          btn.textContent = "Dark Mode";
+        } else {
+          div.classList.add("is-dark-mode");
+          btn.textContent = "Light Mode";
+        }
+      }
+
+      const kmInput = document.querySelector(".js-km");
+      const milInput = document.querySelector(".js-mil");
+      const meterInput = document.querySelector(".js-meter");
+
+      function kmToMiles(km) {
+        return (km / 1.6).toFixed(2);
+      }
+
+      function milesToKm(Mil) {
+        return (Mil * 1.6).toFixed(2);
+      }
+
+      function kmToMeters(km) {
+        return (km * 1000).toFixed(2);
+      }
+
+      function metersToKm(meters) {
+        return (meters / 1000).toFixed(2);
+      }
+
+      function metersToMiles(meters) {
+        return (meters / 1609.34).toFixed(2);
+      }
+      function milesToMeters(miles) {
+        return (miles * 1609.34).toFixed(2);
+      }
+    
+      function convertLength(source) {
+        const val = Number(source.value);
+
+        if (!source.value) return clearAll();
+        if (val <= 0) return;
+        if (val >= 1e10) return alertMessage(source);
+
+        if (source === kmInput) {
+          milInput.value = kmToMiles(val);
+          meterInput.value = kmToMeters(val);
+        } else if (source === milInput) {
+          kmInput.value = milesToKm(val);
+          meterInput.value = milesToMeters(val);
+        } else if (source === meterInput) {
+          kmInput.value = metersToKm(val);
+          milInput.value = metersToMiles(val);
+        }
+      }
+      kmInput.addEventListener("input", () => convertLength(kmInput));
+      milInput.addEventListener("input", () => convertLength(milInput));
+      meterInput.addEventListener("input", () => convertLength(meterInput));
+
+      function clearAll() {
+        kmInput.value = "";
+        milInput.value = "";
+        meterInput.value = "";
+      }
+
+      const sqMetInput = document.querySelector(".js-sq-met");
+      const sqHectInput = document.querySelector(".js-sq-hect");
+      const sqFtInput = document.querySelector(".js-sq-ft");
+
+      function sqMetHectares(sqMet) {
+        return (sqMet / 10000).toFixed(2);
+      }
+
+      function hectaresToSqMet(hect) {
+        return (hect * 10000).toFixed(2);
+      }
+
+      function sqFtToSqMet(sqFt) {
+        return (sqFt / 10.764).toFixed(2);
+      }
+
+      function sqMetToSqFt(sqMet) {
+        return (sqMet * 10.764).toFixed(2);
+      }
+
+      function convertArea(source) {
+        const val = Number(source.value);
+
+        if (!source.value) return clearAllArea();
+        if (val <= 0) return;
+        if (val >= 1e10) return alertMessage(source);
+
+        if (source === sqMetInput) {
+          sqHectInput.value = sqMetHectares(val);
+          sqFtInput.value = sqMetToSqFt(val);
+        } else if (source === sqHectInput) {
+          sqMetInput.value = hectaresToSqMet(val);
+          sqFtInput.value = sqMetToSqFt(hectaresToSqMet(val));
+        } else if (source === sqFtInput) {
+          sqMetInput.value = sqFtToSqMet(val);
+          sqHectInput.value = sqMetHectares(sqFtToSqMet(val));
+        }
+      }
+
+      sqMetInput.addEventListener("input", () => convertArea(sqMetInput));
+      sqHectInput.addEventListener("input", () => convertArea(sqHectInput));
+      sqFtInput.addEventListener("input", () => convertArea(sqFtInput));
+
+      function clearAllArea() {
+        sqMetInput.value = "";
+        sqHectInput.value = "";
+        sqFtInput.value = "";
+      }
+
+      const m1 = document.querySelector(".js-met");
+      const m2 = document.querySelector(".js-m2");
+      const result = document.querySelector(".js-sq-m3");
+
+      function multiply(source) {
+        const a = Number(m1.value);
+        const b = Number(m2.value);
+
+        if (!source.value) return clearAllMultiply();
+        if (a <= 0 || b <= 0) return;
+
+        if (a >= 1e10 || b >= 1e10) return alertMessage(source);
+        result.value = (a * b).toFixed(2);
+      }
+
+      m1.addEventListener("input", () => multiply(m1));
+      m2.addEventListener("input", () => multiply(m2));
+
+      function clearAllMultiply() {
+        m1.value = "";
+        m2.value = "";
+        result.value = "";
+      }
+
+      function alertMessage(input) {
+        input.value = input.value.slice(0, -1);
+        const box = document.getElementById("alert-box");
+        box.style.display = "block";
+        setTimeout(() => {
+          box.style.display = "none";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

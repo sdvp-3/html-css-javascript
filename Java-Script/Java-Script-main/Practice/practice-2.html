@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>T-Shirt Purchase</title>
+    <style>
+      .yellow {
+        background-color: yellow;
+        margin-top: 20px;
+      }
+      .orange {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Adults Plain Cotton T-shirt
+    </p>
+    <script>
+      document.body.innerHTML += `Price: $${7.99}`;
+      document.body.innerHTML += `<br>
+        <button class="yellow" onclick="alert('Added');">
+          Add to cart
+        </button>`;
+      document.body.innerHTML += `
+        <button class="orange" onclick="
+          console.log('Loading...');
+          alert('Purchased');
+        ">
+          Buy Now
+        </button>`;
+      alert('wait..');
+    </script>
+  </body>
+</html>

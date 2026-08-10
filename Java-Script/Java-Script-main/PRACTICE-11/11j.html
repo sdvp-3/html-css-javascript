@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      function addArrays(array1, array2) {
+        let result = [];
+        for (i = 0; i < array1.length; i++) {
+          result.push(array1[i] + array2[i]);
+        }
+        return result;
+      }
+
+      console.log(addArrays([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]));
+    </script>
+  </body>
+</html>

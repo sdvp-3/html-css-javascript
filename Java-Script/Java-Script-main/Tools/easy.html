@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Easy</title>
+    <style>
+        /* 1. Animatsiya harakatini aniqlaymiz */
+        @keyframes kiribKelish {
+            from {
+                transform: translateX(-100px); /* Chaproqdan boshlanadi */
+                opacity: 0;                    /* Ko'rinmaydigan bo'ladi */
+            }
+            to {
+                transform: translateX(500px);     /* O'z joyiga keladi */
+                opacity: 1;                    /* To'liq ko'rinadi */
+            }
+        }
+
+        /* 2. Animatsiyani elementga bog'laymiz */
+        #js-showing {
+            color: rgb(62, 62, 98); 
+            font-family: Arial, Helvetica, sans-serif; 
+            
+            animation-name: kiribKelish; /* Yuqoridagi animatsiya nomi */
+            animation-duration: 1.5s;    /* Animatsiya davomiyligi (1.5 soniya) */
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); /* Siz yozgan tezlik effekti */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- h1 tegi h1 bilan yopilishi kerak -->
+    <h1 id="js-showing"></h1>
+
+    <script>
+        function hisobla(a, b) {
+            let result = a + b;
+            return result;
+        }
+        
+        let javob = hisobla(5, 10);
+        console.log(javob);
+
+        document.getElementById("js-showing").innerHTML = "Result: " + javob;
+    </script>
+
+</body>
+</html>

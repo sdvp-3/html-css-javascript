@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+
+    <button onclick=" playGame('Heads')
+    ">Heads</button>
+    <button onclick=" playGame('Tails')
+    ">Tails</button>
+
+     <p id="result"></p>
+   
+    <script>
+ //1-Mashq
+/*
+  
+   function salom(ism){
+     console.log(" Salom "+ism+".")
+     
+   }
+  
+   salom("Saidjon")
+   salom("Ali")
+  
+*/
+//2-Mashq
+
+/*
+function movieAgeLimited(age){
+
+  if (age >= 18) {
+    return `${age} - Kino ko'rishingiz mumkin!`;
+  } else {
+    return `${age} - Yoshingiz kichik!`;
+  }
+}
+
+console.log(movieAgeLimited(18));
+console.log(movieAgeLimited(17));
+console.log(movieAgeLimited(20));
+console.log(movieAgeLimited(18));
+
+*/
+//3-Mashq
+/*
+function calculation(son1,son2,amal){
+
+  if (amal==="+"){
+    return`${son1+son2}`
+  } else if (amal==="-"){
+    return `${son1-son2}`
+
+  } else if (amal==="*"){
+    return `${son1*son2}`
+
+  }else if (amal==="/"){
+    return `${son1/son2}`
+  } else {
+    return "Noto'g'ri amal"
+  }
+
+}
+
+console.log(calculation(20,10,"+"));
+console.log(calculation(20,5,"+"));
+console.log(calculation(20,0,"+"));
+console.log(calculation(20,20,"**"));
+*/
+// 4-Mashq
+/*
+
+function bigNumb(son1,son2,son3){
+
+  if(son1>son2&&son1>son3){
+    return`${son1}`
+  } else if (son2>son1 &&son2>son3){
+    return `${son2}`
+  }else if (son3>son1 && son3>son2){
+    return `${son3}`
+  } else if (son1>=son2&&son1>=son3){
+    return `${son1}`
+
+  }
+}
+
+console.log(bigNumb(10,5,20));
+console.log(bigNumb(10,10,2));
+console.log(bigNumb(30,5,15));
+
+*/
+
+//5-Mashq
+
+// 1-funksiya
+function randomTanlash() {
+  const randomNumber=Math.random()
+   return {
+        comp: randomNumber >= 0.5 ? "Heads" : "Tails",
+        number: randomNumber // ← sonni ham qaytaramiz
+    };
+
+
+
+
+
+
+}
+
+// 2-funksiya
+function resultChecking(human, comp) {
+    if (human === comp) {
+        return "You won! 🎉";
+    } else {
+        return "You lost! 😢";
+    }
+}
+
+// 3-funksiya
+function playGame(guess) {
+   const { comp, number } = randomTanlash();
+         
+    const result = resultChecking(guess, comp); 
+  
+
+ document.getElementById('result').textContent =
+        `Siz: ${guess} | Kompyuter: ${comp} → ${result} (${number.toFixed(2)})`;
+console.log(`Siz: ${guess} | Kompyuter: ${comp} → ${result} (${number.toFixed(2)})`)
+}
+ 
+
+
+
+    </script>
+  </body>
+</html>

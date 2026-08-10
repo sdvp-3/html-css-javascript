@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Color</title>
+  </head>
+  <body>
+    <h1 id="hi">Hello!</h1>
+    <button id="red">Red</button>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>
+
+    <script>
+      /* 20. Stringni so'zlarga bo'l (split ishlatmasdan) */
+
+      document.addEventListener("DOMContentLoaded", function () {
+        //color to red
+        document.querySelector("#red").onclick = function () {
+          document.querySelector("#hi").style.color = "red";
+        };
+        //color to blue
+        document.querySelector("#blue").onclick = function () {
+          document.querySelector("#hi").style.color = "blue";
+        };
+        //color to green
+        document.querySelector("#green").onclick = function () {
+          document.querySelector("#hi").style.color = "green";
+        };
+      });
+    </script>
+  </body>
+</html>

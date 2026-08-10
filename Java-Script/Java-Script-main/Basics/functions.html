@@ -1,0 +1,40 @@
+function convertToFuut(miles){
+  return miles * 5280;
+}
+
+function convertToKilometrs(miles){
+  return miles * 1.6;
+}
+
+function convertToMiles(kilometrs){
+  return kilometrs / 1.6;
+}
+
+function convertTozMiles(fuut){
+  return fuut / 5280;
+}
+
+function convertToFuutKilometrs(fuut){
+  return fuut / 3280;
+}
+
+function convertLengs2(lengs, from, to) {
+  if (from === to) {
+    return `${lengs}${from === 'miles' ? 'miles' : from === 'kilometrs' ? 'km' : 'ft'}`;
+  }
+  if (from === 'miles' && to === 'kilometrs') {
+    const result = convertToKilometrs(lengs);
+    return `${result}km`;
+  } else if (from === 'miles' && to === 'fuut'){
+    const result = convertToFuut(lengs);
+    return `${result}ft`;
+  } else if (from === 'kilometrs' && to === 'fuut'){
+    const miles = convertToMiles(lengs);
+    const result = convertToFuut(miles);
+    return `${result}ft`;
+  }
+}
+
+console.log(convertLengs2(5,'miles' ,'kilometrs'));
+console.log(convertLengs2(5,'miles' ,'fuut'));
+console.log(convertLengs2(5,'kilometrs' ,'fuut'));

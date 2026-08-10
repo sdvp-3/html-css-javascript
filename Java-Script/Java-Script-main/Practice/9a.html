@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Food Order</title>
+  </head>
+  <body>
+   <button>
+    9a
+   </button>
+   
+   <button class="js-9b" onclick="changeText() ">9b</button>
+   <p> </p>
+            
+   <button onclick="changeBelow()"  class="js-heads">Heads</button>
+   <button onclick=" changeBelow2()"  class="js-tails" >Tails</button>
+   <p class="js-paragraph"></p>
+
+   <script>
+
+    document.querySelector('button')
+
+  const buttonElement=document.querySelector('button')
+    console.log (buttonElement)
+
+    
+
+    function changeText(){
+      const buttonElement=document.querySelector('.js-9b')
+      if(buttonElement.innerHTML==='9b'){
+        buttonElement.innerHTML='9b done'
+
+      }
+      else if (buttonElement.innerHTML==='9b done'){
+        buttonElement.innerHTML='9b'
+      }
+    }
+
+    function changeBelow(){
+      const belowElement=document.querySelector('.js-heads')
+      if (belowElement.innerHTML==='Heads'){
+         
+     document.querySelector('.js-paragraph').innerHTML='You chose:Heads'
+      }
+     
+    }
+ function changeBelow2(){
+  const belowElement2=document.querySelector('.js-tails')
+  if (belowElement2.innerHTML==='Tails'){
+   
+    document.querySelector('.js-paragraph').innerHTML='You chose:Tails'}
+ }
+
+    
+
+   
+    
+
+   </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Name Input</title>
+  </head>
+  <body>
+    <input
+      placeholder="Cost Of Product"
+      class="js-input-element"
+      onkeydown="onkeyDownEnter()"
+      onkeyup="inputName()"
+    />
+    <button onclick="inputName()" class="js-button">Calculate</button>
+    <p class="js-cost"></p>
+    <p></p>
+    <input
+      placeholder="Cost Of Product"
+      class="js-input-element2"
+      onkeydown="onkeyDownEnter2()"
+      onkeyup="inputName2()"
+    />
+    <button onclick="inputName2()" class="js-button">Calculate</button>
+    <p class="js-cost2"></p>
+
+    <script>
+      //NUMBER
+      function onkeyUp() {}
+
+      function onkeyDownEnter() {
+        if (event.key === "Enter") {
+          inputName();
+        }
+      }
+
+      function inputName() {
+        const inputElement = document.querySelector(".js-input-element");
+        let cost = Number(inputElement.value);
+
+        if (cost < 10) {
+          cost = cost + 10;
+        } else if (cost > 10) {
+          cost = cost;
+        }
+        document.querySelector(".js-cost").innerHTML = `$${cost.toFixed(2)}`;
+      }
+      //WORD
+      function onkeyUp2() {}
+      function onkeyDownEnter2() {
+        if (event.key === "Enter") {
+          inputName2();
+        }
+      }
+      function inputName2() {
+        const inputElement2 = document.querySelector(".js-input-element2");
+        let text = inputElement2.value;
+
+        document.querySelector(".js-cost2").innerHTML = `${text}`;
+      }
+    </script>
+  </body>
+</html>

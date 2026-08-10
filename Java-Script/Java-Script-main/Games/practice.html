@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Coin Flip game</title>
+  </head>
+  <body>
+    <button onclick="playNumber('1')">1</button>
+    <button onclick="playNumber('2')">2</button>
+
+    <button onclick="playNumber('3')">3</button>
+
+    <button onclick="playNumber('4')">4</button>
+    <script>
+      function pickComputerMove() {
+        const randomNumber = Math.random();
+
+        let computerMove = "";
+
+        if (randomNumber >= 0 && randomNumber < 1 / 4) {
+          computerMove = "1";
+        } else if (randomNumber >= 1 / 4 && randomNumber < 1 / 2) {
+          computerMove = "2";
+        } else if (randomNumber > 1 / 2 && randomNumber <= 3 / 4) {
+          computerMove = "3";
+        } else {
+          computerMove = "4";
+        }
+        return computerMove;
+      }
+
+      function playNumber(playerMove) {
+        const computerMove = pickComputerMove();
+        let result = "";
+
+        if (playerMove === computerMove) {
+          result = "Yutdingiz! 🏆";
+        } else {
+          result = "Yutqazdingiz. ❌";
+        }
+
+        alert(
+          `Siz: ${playerMove}. Kompyuter: ${computerMove}. \nNatija: ${result}`,
+        );
+      }
+    </script>
+  </body>
+</html>

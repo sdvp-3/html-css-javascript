@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Exercise</title>
+  </head>
+  <body>
+    <script>
+      function findIndex(array, word) {
+        let found = -1;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            found = i;
+            break;
+          }
+        }
+        console.log(found);
+      }
+
+      findIndex(["red", "blue", "green", "yellow"], "dark");
+      findIndex(["red", "blue", "green", "blue", "red"], "red");
+    </script>
+  </body>
+</html>

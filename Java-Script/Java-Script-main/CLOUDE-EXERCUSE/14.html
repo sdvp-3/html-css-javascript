@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* 14. Stringning birinchi harfini katta qil */
+      function upperCase(str){
+        let result=[];
+        for (let i=0; i<str.length; i++){
+          let up=str[i][0].toUpperCase()+str[i].slice(1)
+          result.push(up)
+        
+        }
+        return result;
+      }
+      console.log(upperCase(["hello","salom"]))
+    </script>
+  </body>
+</html>

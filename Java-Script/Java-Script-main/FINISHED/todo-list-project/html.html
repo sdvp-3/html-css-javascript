@@ -1,0 +1,33 @@
+
+
+<!doctype html>
+<html>
+  <head>
+    <title>Todo List</title>
+  
+  </head>
+  <body>
+<h1 id="us"></h1>
+
+    <script>
+function renderUsers() {
+  const users = 
+  [{name:"Ali",age:23},
+   {name:"Vali",age:20},
+  {name:"Olim",age:20}];
+ let htmlNameAge=""
+ 
+
+  users.forEach((user) => {
+   const {name, age} =user
+
+   htmlNameAge += ` ${name}-${age} ` + "";
+  });
+
+document.getElementById("us").innerHTML= htmlNameAge
+
+}
+renderUsers()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jangovar O'yin</title>
+</head>
+<body>
+    <h2>Siz: <span id="player-hp">20</span> HP | Kompyuter: <span id="computer-hp">20</span> HP</h2>
+    <p id="battle-log">Jangni boshlash uchun son tanlang!</p>
+    
+    <!-- 1 dan 5 gacha tugmalar -->
+    <button onclick="attack(1)">1</button>
+    <button onclick="attack(2)">2</button>
+    <button onclick="attack(3)">3</button>
+    <button onclick="attack(4)">4</button>
+    <button onclick="attack(5)">5</button>
+
+    <script>
+        let playerHP = 20;
+        let computerHP = 20;
+
+        function attack(playerChoice) {
+            if (playerHP <= 0 || computerHP <= 0) {
+                alert("O'yin tugadi! Qayta yuklang.");
+                return;
+            }
+
+            // Kompyuter 1 dan 5 gacha tasodifiy son tanlaydi
+            const computerChoice = Math.floor(Math.random() * 5) + 1;
+            const log = document.getElementById('battle-log');
+            
+            if (playerChoice > computerChoice) {
+                let damage = playerChoice - computerChoice;
+                computerHP -= damage;
+                log.innerHTML = `Siz ${playerChoice} tanladingiz, Kompyuter ${computerChoice}. Siz ${damage} zarar berdingiz!`;
+            } else if (computerChoice > playerChoice) {
+                let damage = computerChoice - playerChoice;
+                playerHP -= damage;
+                log.innerHTML = `Siz ${playerChoice} tanladingiz, Kompyuter ${computerChoice}. Kompyuter ${damage} zarar berdi!`;
+            } else {
+                log.innerHTML = `Ikkangiz ham ${playerChoice} tanladingiz. To'qnashuv! Zarar yo'q.`;
+            }
+
+            // Ekrandagi joni yangilash
+            document.getElementById('player-hp').innerText = playerHP;
+            document.getElementById('computer-hp').innerText = computerHP;
+
+            // G'olibni aniqlash
+            if (playerHP <= 0) {
+                log.innerHTML = "Siz mag'lub bo'ldingiz! 💀";
+            } else if (computerHP <= 0) {
+                log.innerHTML = "G'alaba! Kompyuter mag'lub bo'ldi 🏆";
+            }
+        }
+    </script>
+</body>
+</html>

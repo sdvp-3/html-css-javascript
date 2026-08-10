@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style></style>
+  </head>
+  <body>
+    <p>To Do List</p>
+
+    <input  placeholder="create a plan"  class="js-input">
+
+    <button onclick="">add</button>
+    <button onclick="">remove</button>
+
+    <div class="js-add" ></div>
+
+    
+    <script>
+    
+
+    const todoList=[];//buning ichida vazifalar joylashadi!!
+
+    function renderTodo(){
+
+      let todoListHtml=''
+
+      for(let i=0;i<todoList.length; i++){
+        const todo=todoList[i]
+        const html=`<p>${todo}</p>`
+        todoListHtml+=html
+      }
+      document.querySelector('.js-add').innerHTML=todoListHtml;
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+   
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>is same products?</title>
+  </head>
+  <body>
+   
+    <script>
+     function milToKm(mil){
+     return mil*1.6
+     }
+
+     function kmToMil(km){
+      return km/1.6
+     }
+    
+     function convertTosomthing(length,from,to){
+
+     if (from===to){
+      return `${length}, from==='mil'?  'mil' :'km'  from==='km'? 'km' :'mil'`
+     } if (from==='mil' && to==='km'){
+      const result=milToKm(length);
+      return`${result}km`
+     } else if (from==='km' && to==='mil'){
+      const result=kmToMil(length);
+      return `${result}mil`
+     }
+
+
+     }
+     console.log(convertTosomthing(20,'mil','km')) //1.6km=1mil, 16km=10mil ,32km=20mil
+      console.log(convertTosomthing(32,'km','mil'))//1.6km=1mil, 16km=10mil ,32km=20mil
+
+      
+
+// 
+    </script>
+  </body>
+</html>

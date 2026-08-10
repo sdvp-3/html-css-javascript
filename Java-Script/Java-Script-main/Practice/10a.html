@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Button ,Uber Buttons</title>
+    <style>
+      .amazon-button{
+        background-color: rgb(255, 216, 20);
+        color: black;
+        padding-left:25px;
+        padding-right:25px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        border-radius: 50px;
+        border: none;
+
+      }
+      .is-added-to-cart {
+        background-color: rgb(235, 235, 235);
+        color: black;
+      }
+
+      .request-button{
+        background-color: black;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        font-family: arial;
+        font-weight: 600;
+        margin-left: 15px;
+      }
+
+      .is-requested{
+        background-color: rgb(225, 225, 225);
+        color: black;
+
+      }
+
+      .time-button{
+        background-color: rgb(230, 230, 230);
+        color: black;
+       padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        font-family: arial;
+        font-weight: 600;
+        margin-left:15px ;
+      }
+
+      .is-schedule-created{
+        background-color: black;
+        color: white;
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <button onclick="changeableButtons()" class="js-amazon-button amazon-button">
+      Add to Cart
+    </button>
+
+    <button onclick="changeableButtons2()" class="js-request-button request-button">
+      Request now
+    </button>
+
+    <button onclick="changeableButtons3()" class="js-time-button time-button">
+      Schedule for later
+    </button>
+
+    <script>
+
+      function changeableButtons(){
+
+        const buttonsElement=document.querySelector('.js-amazon-button')
+
+        const buttonText = buttonsElement.innerHTML.trim();
+          
+
+        if(buttonText==='Add to Cart'){
+          buttonsElement.innerHTML='Added to Cart'
+          buttonsElement.classList.add('is-added-to-cart')
+          
+
+        }else if(buttonText==='Added to Cart'){
+          buttonsElement.innerHTML='Add to Cart'
+          buttonsElement.classList.remove('is-added-to-cart')
+          
+        }
+
+      }
+
+      function  changeableButtons2(){
+ const buttonsElement2=document.querySelector(' .js-request-button')
+ 
+ const buttonText2 = buttonsElement2.innerHTML.trim();
+
+        if(buttonText2==='Request now'){
+          buttonsElement2.innerHTML='Requested'
+          buttonsElement2.classList.add('is-requested')
+        } else if(buttonText2==='Requested'){
+          buttonsElement2.innerHTML='Request now'
+          buttonsElement2.classList.remove('is-requested')
+        }
+      }
+
+       function  changeableButtons3(){
+ const buttonsElement3=document.querySelector('.js-time-button')
+ 
+ const buttonText3 = buttonsElement3.innerHTML.trim();
+
+        if(buttonText3==='Schedule for later'){
+          buttonsElement3.innerHTML='Schedule Created'
+          buttonsElement3.classList.add('is-schedule-created')
+        } else if(buttonText3==='Schedule Created'){
+          buttonsElement3.innerHTML='Schedule for later'
+          buttonsElement3.classList.remove('is-schedule-created')
+        }
+      }
+
+
+    </script>
+
+  </body>
+</html>

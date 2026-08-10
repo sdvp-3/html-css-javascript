@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Button ,Uber Buttons</title>
+    <style>
+    .gaming-button,
+    .music-button,
+    .tech-button
+    {
+      background-color: rgb(235, 235, 235);
+      color: black;
+      border: none;
+      border-radius: 4px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 8px;
+      padding-top: 8px
+
+    }
+
+    .is-on-g,
+    .is-on-m,
+    .is-on-t{
+      background-color: black;
+      color: white;
+
+    }
+    </style>
+  </head>
+  <body>
+<button onclick="buttons()" class="js-gaming-button gaming-button">Gaming</button>
+<button onclick="buttons2()" class="js-music-button music-button">Music</button>
+<button onclick="buttons3()" class="js-tech-button tech-button">Tech</button>
+
+    <script>
+
+      function buttons(){
+
+        
+         
+             const buttonElement=document.querySelector('.js-gaming-button')
+
+              const buttonElement2=document.querySelector('.js-music-button')
+
+              const buttonElement3=document.querySelector('.js-tech-button')
+       
+            
+
+       if(buttonElement.classList.contains('is-on-g')){
+        buttonElement.innerHTML='Gaming'
+        buttonElement.classList.remove('is-on-g')
+       } 
+       
+       else {
+        buttonElement.innerHTML='Gaming'
+        buttonElement.classList.add('is-on-g')
+
+
+         buttonElement2.classList.remove('is-on-m')
+        buttonElement2.innerHTML='Music'
+
+        buttonElement3.innerHTML='Tech'
+        buttonElement3.classList.remove('is-on-t')
+
+
+       }
+      
+      }
+
+       function buttons2(){
+
+          const buttonElement=document.querySelector('.js-gaming-button')
+
+              const buttonElement2=document.querySelector('.js-music-button')
+
+              const buttonElement3=document.querySelector('.js-tech-button')
+
+
+         
+       if(buttonElement2.classList.contains('is-on-m')){
+         buttonElement2.innerHTML='Music'
+         buttonElement2.classList.remove('is-on-m')        
+            
+       }
+       else {
+        buttonElement2.innerHTML='Music'
+         buttonElement2.classList.add('is-on-m')
+
+         buttonElement.classList.remove('is-on-g')
+         buttonElement.innerHTML='Gaming'
+
+          buttonElement3.innerHTML='Tech'
+        buttonElement3.classList.remove('is-on-t')
+
+       }
+
+    }
+
+    function buttons3(){
+  const buttonElement=document.querySelector('.js-gaming-button')
+
+   const buttonElement2=document.querySelector('.js-music-button')
+
+   const buttonElement3=document.querySelector('.js-tech-button')
+
+  if(buttonElement3.classList.contains('is-on-t')){
+        buttonElement3.innerHTML='Tech'
+        buttonElement3.classList.remove('is-on-t')
+       }
+          else {
+
+         buttonElement3.innerHTML='Tech';
+        buttonElement3.classList.add('is-on-t')
+
+
+        buttonElement2.classList.remove('is-on-m')
+        buttonElement2.innerHTML='Music'
+
+        buttonElement.classList.remove('is-on-g')
+        buttonElement.innerHTML='Gaming'
+       }
+
+
+    }
+      
+    </script>
+
+  </body>
+</html>

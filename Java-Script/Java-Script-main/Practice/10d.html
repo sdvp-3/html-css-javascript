@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Button ,Uber Buttons</title>
+    <style>
+    .gaming-button,
+    .music-button,
+    .tech-button
+    {
+      background-color: rgb(235, 235, 235);
+      color: black;
+      border: none;
+      border-radius: 4px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 8px;
+      padding-top: 8px
+
+    }
+
+    .is-on{
+      background-color: black;
+      color: white;
+
+    }
+    </style>
+  </head>
+  <body>
+<button onclick="buttons()" class="js-gaming-button gaming-button">Gaming</button>
+<button onclick="buttons2()" class="js-music-button music-button">Music</button>
+<button onclick="buttons3()" class="js-tech-button tech-button">Tech</button>
+
+    <script>
+
+      function buttons(){
+        const buttonElement=document.querySelector('.js-gaming-button')
+        
+        if(buttonElement.classList.contains('is-on')){
+          buttonElement.innerHTML='Gaming'
+          buttonElement.classList.remove('is-on')
+        }else {
+          buttonElement.innerHTML='Gaming';
+          buttonElement.classList.add('is-on');
+        }
+      }
+
+         function buttons2(){
+        const buttonElement2=document.querySelector('.js-music-button')
+        
+        if(buttonElement2.classList.contains('is-on')){
+          buttonElement2.innerHTML='Music'
+          buttonElement2.classList.remove('is-on')
+        }else {
+          buttonElement2.innerHTML='Music';
+          buttonElement2.classList.add('is-on');
+        }
+      }
+
+         function buttons3(){
+        const buttonElement3=document.querySelector('.js-tech-button')
+        
+        if(buttonElement3.classList.contains('is-on')){
+          buttonElement3.innerHTML='Tech'
+          buttonElement3.classList.remove('is-on')
+        }else {
+          buttonElement3.innerHTML='Tech';
+          buttonElement3.classList.add('is-on');
+        }
+      }
+
+    </script>
+
+  </body>
+</html>

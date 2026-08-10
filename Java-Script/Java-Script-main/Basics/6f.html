@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>clif game</title>
+  </head>
+  <body>
+    <script>
+   const randomNumber=Math.random();
+
+   
+ let result='';
+    if (randomNumber<=1/2)  {
+        result='Heads';
+        console.log(`${result}`)
+    } else if (1/2<1) {
+       result='Tails';
+        console.log(`${result}`)
+
+    }
+  
+ 
+
+   if (result==='Heads') {
+    console.log('You win!')
+    result='Heads';
+   } else {
+    console.log('You lose!!')
+    result='Tails';
+   }
+
+    console.log(`Generate Number: ${randomNumber}`);  
+
+   
+    </script>
+  </body>
+</html>

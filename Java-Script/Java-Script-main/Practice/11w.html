@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Exercise</title>
+  </head>
+  <body>
+    <script>
+      function findIndex(array, word) {
+        let found = -1;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            found = i;
+            break;
+          }
+        }
+        return found; // ✅ return!
+      }
+      function unique(array) {
+        const result = [];
+        for (let i = 0; i < array.length; i++) {
+          if (findIndex(result, array[i]) === -1) {
+            result.push(array[i]);
+          }
+        }
+        return result;
+      }
+      console.log(unique(["green", "red", "blue", "red"]));
+      console.log(unique(["dark", "dark", "blue", "red"]));
+      console.log(unique(["green", "yellow", "blue", "green"]));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: rgba(0, 0, 0, 0.748);
+        color: white;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      
+      background-size: cover;       /* Rasmni ekran o'lchamiga moslab cho'zadi yoki kichraytiradi */
+  background-position: center;   /* Rasmni markazga tekislaydi */
+  background-repeat: no-repeat;  /* Rasm takrorlanib ketishining oldini oladi */
+  background-attachment: fixed;
+      }
+
+      .buttons {
+        background-color: rgb(42, 37, 37);
+        color: white;
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: large;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: 1px 2px 5px rgb(48, 47, 47);
+      }
+
+      .buttons:hover {
+        background-color: rgb(64, 64, 64);
+        transition: 0.3s;
+      }
+
+      .button {
+        background-color: green;
+        color: white;
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: large;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: 1px 2px 5px rgb(48, 47, 47);
+      }
+
+      .button:hover {
+        background-color: rgb(94, 216, 53);
+        transition: 0.3s;
+      }
+
+     .button-show {
+  font-size: 35px; /* Matn oʻlchami */
+  color: rgb(253, 253, 253);
+  text-align: right; /* Sonlar o'ng tomondan yoziladi */
+  width: 220px; /* Kalkulyatoringiz kengligiga moslang */
+  margin: 10px auto; /* Markazga tekislash va masofa */
+  
+  /* MANA SHU QATORLAR XATONI TUZATADI: */
+  word-break: break-all; /* Uzun sonlarni majburan pastga tushiradi */
+  max-height: 80px; /* Ekranning maksimal balandligi */
+  overflow: hidden; /* Agar shunda ham sig'masa, tugmalar ustiga chiqib ketmaydi */
+}
+
+      /* Aktiv operator uslubi */
+      .is-active-operator {
+        background-color: rgb(94, 216, 53) !important;
+        color: black !important;
+      }
+
+      .js-showcalculation{
+        height: 40px;
+        width: 230px;
+        border: 1px solid black;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        padding-right: 10px;
+        border-color: rgb(0, 0, 0);
+        margin-top:10px ;
+        display:block;
+        box-shadow: 1px 2px 5px black;
+
+      }
+
+      .container{
+        height: 350px;
+        width: 220px;
+        border-radius: 20px;
+        border:1px solid black;
+        box-shadow: 1px 2px 5px black;
+        align-items: center;
+        padding-left: 13px;
+        padding-right: 10px;
+        display: block;
+        
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <p class="js-showcalculation button-show">0</p>
+<div class="container">
+
+<p>
+      <button onclick="addToCalculation('1')" class="buttons">1</button>
+      <button onclick="addToCalculation('2')" class="buttons">2</button>
+      <button onclick="addToCalculation('3')" class="buttons">3</button>
+      <button onclick="addToCalculation('+')" class="button js-plus">+</button>
+    </p>
+
+    <p>
+      <button onclick="addToCalculation('4')" class="buttons">4</button>
+      <button onclick="addToCalculation('5')" class="buttons">5</button>
+      <button onclick="addToCalculation('6')" class="buttons">6</button>
+      <button onclick="addToCalculation('-')" class="button js-minus">-</button>
+    </p>
+
+    <p>
+      <button onclick="addToCalculation('7')" class="buttons">7</button>
+      <button onclick="addToCalculation('8')" class="buttons">8</button>
+      <button onclick="addToCalculation('9')" class="buttons">9</button>
+      <button onclick="addToCalculation('*')" class="button js-times">*</button>
+    </p>
+
+    <p>
+      <button onclick="addToCalculation('0')" class="buttons">0</button>
+      <button onclick="addToCalculation('.')" class="button">.</button>
+      <button onclick="addToCalculation('=')" class="button">=</button>
+      <button onclick="addToCalculation('/')" class="button js-divide">/</button>
+    </p>
+
+    <p>
+      <button onclick="addToCalculation('Clear')" class="button">C</button>
+      <button onclick="addToCalculation('backSpace')" class="button">&larr;</button>
+    </p>
+
+</div>
+    
+
+    <script>
+   let calculation = "";
+const operators = ["+", "-", "*", "/"];
+
+function addToCalculation(value) {
+  const lastChar = calculation[calculation.length - 1];
+
+
+  if (operators.includes(value) && operators.includes(lastChar)) {
+   
+    calculation = calculation.slice(0, -1) + value;
+    
+  
+    document.querySelector(".js-showcalculation").innerHTML = calculation;
+    updateOperatorStyles(); 
+    return; 
+    
+  }
+
+  
+  if (calculation === "" && operators.includes(value)) {
+    return;
+  }
+  
+ 
+  if (value === "=") {
+    if (calculation !== "") {
+      try {
+        calculation = String(eval(calculation));
+      } catch (error) {
+        calculation = "Error";
+      }
+    }
+  } else if (value === "Clear") {
+    calculation = "";
+  } else if (value === 'backSpace') {
+    calculation = calculation.slice(0, -1);
+  } else {
+    calculation += value;
+  }
+
+ 
+  document.querySelector(".js-showcalculation").innerHTML = calculation || "0";
+  
+ 
+  updateOperatorStyles();
+}
+
+
+function updateOperatorStyles() {
+ 
+  document.querySelector('.js-plus').classList.remove('is-on-p');
+  document.querySelector('.js-minus').classList.remove('is-on-m');
+  document.querySelector('.js-times').classList.remove('is-on-t');
+  document.querySelector('.js-divide').classList.remove('is-on-d');
+
+ 
+  const lastChar = calculation[calculation.length - 1];
+  if (lastChar === "+") document.querySelector('.js-plus').classList.add('is-on-p');
+  if (lastChar === "-") document.querySelector('.js-minus').classList.add('is-on-m');
+  if (lastChar === "*") document.querySelector('.js-times').classList.add('is-on-t');
+  if (lastChar === "/") document.querySelector('.js-divide').classList.add('is-on-d');
+}
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* 5.  Son musbat, manfiy yoki nol ekanini ayt */
+     function checkNam(arr) {
+  
+      for (let i=0; i<arr.length; i++ ){
+        if(arr[i]<0){
+          console.log(`son manfiy:${arr[i]}`)
+        }
+        else if(arr[i]===0){
+          console.log(`son nol:${arr[i]}`)
+        }
+        else{
+          console.log(`son musbat:${arr[i]}`)
+        }
+       
+      }
+
+
+     }
+
+    checkNam([1,2,3,-3,-5,0,5,-7,0])
+    </script>
+  </body>
+</html>

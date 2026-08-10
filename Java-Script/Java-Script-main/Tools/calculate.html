@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <p>Calculator</p>
+
+    <p id="display">0</p>
+    <p>
+      <button onclick="addTocalculation('1')">1</button>
+      <button onclick="addTocalculation('2')">2</button>
+      <button onclick="addTocalculation('3')">3</button>
+      <button onclick="addTocalculation('+')">+</button>
+      <button onclick="addTocalculation('=')">=</button>
+      <button onclick="addTocalculation('Clear')">Clear</button>
+
+      <script>
+        let calculation = localStorage.getItem("calc") || "";
+        document.getElementById("display").innerText = calculation || "0";
+        function addTocalculation(value) {
+          if (value === "=") {
+            calculation = String(eval(calculation));
+          } else if (value === "Clear") {
+            calculation = "";
+          } else {
+            calculation += value;
+          }
+
+          localStorage.setItem("calc", calculation);
+          document.getElementById("display").innerHTML = calculation || "0";
+        }
+      </script>
+    </p>
+  </body>
+</html>

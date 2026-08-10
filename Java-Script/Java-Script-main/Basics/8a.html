@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basketball</title>
+  </head>
+  <body>
+   
+    <script>
+       const product ={
+        name:'Basketball',
+        price:2095,
+        'delivery-time':'2-3 days'
+       }
+       product.price+=500;
+       console.log(product.name)
+       console.log(product.price)
+       console.log(product['delivery-time'])
+
+       const product1 = {
+        name:'shirt',
+        price:1000,
+       }
+
+       const product2 = {
+        name:'T-shirt',
+        price:500,
+       }
+
+      function comparePrice(product1,product2) {
+        
+         if (product1.price>product2.price){
+        return(`${product1.name} is more expensive than ${product2.name}`);
+
+         } else if (product1.price<product2.price) {
+          return(` ${product1.name} is less expensive than ${product2.name}`);
+         } else if (product1.price===product2.price) {
+          return(`${product1.name} and ${product2.name} have the same price`);
+         }
+      } console.log(comparePrice(product1, product2));
+     
+
+
+    </script>
+  </body>
+</html>

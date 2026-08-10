@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* 16. Stringdagi takrorlanuvchi harflarni top */
+      function arrays(arr){
+      const fruits=[];
+     
+        for (let i=0; i<arr.length; i++){
+          if(arr[i]==='apple' && fruits.length<1){
+            fruits.push(arr[i])
+          }
+          else if(arr[i]!=='apple' ){
+            fruits.push(arr[i])
+          }
+        
+        }
+        return fruits
+        
+      }
+      console.log(arrays(['apple','apple','apple','grape','orange']))
+    </script>
+  </body>
+</html>

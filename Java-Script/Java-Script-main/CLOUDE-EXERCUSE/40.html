@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* 40. Massivdagi sonlarni string ga aylantir */
+      // 1. MARKAZIY OMBOR (STORE)
+// Hozircha omborimiz bo'sh, savatda hech narsa yo'q
+let store = {
+    cart: [],
+    totalPrice: 0
+};
+
+// 2. OMBOR MUDIRI (REDUCER)
+// Bu funksiya kelgan buyruqqa (action) qarab omborni yangilaydi
+function storeManager(state, action) {
+    switch (action.type) {
+        case "ADD_TO_CART":
+            // Savatga yangi mahsulotni qo'shamiz
+            state.cart.push(action.payload);
+            // Umumiy narxni hisoblaymiz
+            state.totalPrice += action.payload.price;
+            console.log(`✅ [${action.payload.name}] savatga qo'shildi!`);
+            break;
+            
+        case "CLEAR_CART":
+            // Savatni tozalaymiz
+            state.cart = [];
+            state.totalPrice = 0;
+            console.log("🧹 Savat butunlay tozalandi.");
+            break;
+            
+        default:
+            console.log("❓ Noma'lum buyruq.");
+    }
+    
+    // Yangilangan omborni konsolda ko'rsatamiz
+    console.log("📦 JORIY OMBOR HOLATI:", state);
+    console.log("-----------------------------------------");
+}
+
+// 3. ALOQA OPERATORI (DISPATCH)
+// Bu funksiya buyruqlarni ombor mudiriga jo'natadi
+function dispatch(action) {
+    storeManager(store, action);
+}
+
+// ==========================================
+// 🔥 AMALIYOTDA SINAB KO'RAMIZ (Simulyatsiya)
+// ==========================================
+
+console.log("🚀 Coupang ilovasi ishga tushdi!");
+console.log("Boshlang'ich ombor:", store);
+console.log("-----------------------------------------");
+
+// Foydalanuvchi Smartfonni savatga qo'shdi (Knopkani bosdi)
+dispatch({
+    type: "ADD_TO_CART",
+    payload: { id: 1, name: "Samsung Galaxy", price: 800 }
+});
+
+// Foydalanuvchi endi Quloqchinni ham qo'shdi
+dispatch({
+    type: "ADD_TO_CART",
+    payload: { id: 2, name: "Galaxy Buds", price: 150 }
+});
+
+// Foydalanuvchi fikridan qaytdi va savatni tozaladi
+dispatch({
+    type: "CLEAR_CART"
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Name Input</title>
+  </head>
+  <body>
+  
+    <input placeholder="enter your name" class="js-input-element" onkeydown=" handelkeyDown()">
+
+   <button onclick=" inputName()" class="js-button">  Submit </button>
+
+    <p class="js-output"></p>
+  
+   <script>
+    function handelkeyDown(){
+      if(event.key==='Enter'){
+        inputName()
+      }
+    }
+
+function inputName(){
+  const inputElement=document.querySelector('.js-input-element')
+  let text=(inputElement.value);
+
+  document.querySelector('.js-output').innerHTML=`Your Name:${text}`
+}
+ 
+   </script>
+
+  </body>
+</html>

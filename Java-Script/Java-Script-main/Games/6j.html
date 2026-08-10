@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Coin Flip Game</title>
+  </head>
+  <body>
+    <h2>🪙 Coin Flip</h2>
+    <p>Heads yoki Tails tanlang!</p>
+
+    <button onclick="playGame('Heads')">Heads</button>
+    <button onclick="playGame('Tails')">Tails</button>
+    <button
+      onclick="
+        score.Wins = 0;
+        score.Losses = 0;
+        localStorage.removeItem('score');
+        updateScoreDisplay();
+      "
+    >
+      Reset
+    </button>
+    <p id="result"></p>
+    <p id="scoreDisplay"></p>
+
+    <script>
+      let score = JSON.parse(localStorage.getItem("score")) || {
+        Wins: 0,
+        Losses: 0,
+      };
+
+      updateScoreDisplay(); // Sahifa ochilganda scoreni ko'rsat
+
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const computerMove = randomNumber < 0.5 ? "Heads" : "Tails";
+        const isWin = guess === computerMove;
+
+        if (isWin) {
+          score.Wins += 1;
+        } else {
+          score.Losses += 1;
+        }
+
+        localStorage.setItem("score", JSON.stringify(score));
+
+        document.getElementById("result").textContent =
+          `Siz: ${guess} | Kompyuter: ${computerMove} → ${isWin ? "✅ Yutdingiz!" : "❌ Yutqazdingiz!"} (${randomNumber.toFixed(2)})`;
+
+        updateScoreDisplay();
+      }
+
+      function updateScoreDisplay() {
+        document.getElementById("scoreDisplay").textContent =
+          `🏆 Wins: ${score.Wins} | 💔 Losses: ${score.Losses}`;
+      }
+    </script>
+  </body>
+</html>

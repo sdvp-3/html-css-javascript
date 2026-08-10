@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* 9.  Sonni raqamlarini yig'indisi (123 → 6) */
+
+      function digitSum(num) {
+        return String(num)
+          .split("")
+          .map((x) => Number(x))
+          .reduce((sum, x) => sum + x, 0);
+      }
+
+      console.log(digitSum(1234567890));
+
+      function digitSUM(nums) {
+        let num = 0;
+        let str = String(nums);
+        let arr = str.split("");
+        a;
+        for (let i = 0; i < arr.length; i++) {
+          num += Number(arr[i]);
+        }
+        return num;
+      }
+      console.log(digitSUM(1234567890));
+    </script>
+  </body>
+</html>

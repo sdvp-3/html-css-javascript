@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* 11. Stringni teskari qil ("hello" → "olleh") */
+
+
+  function array(arr){
+    let result=[];
+
+    for(let i=0; i<arr.length; i++){
+      let teskari=arr[i].split("").reverse("").join("")
+      result.push(teskari)
+    }
+    return result
+  }
+  console.log(array(["hello","saidjon","saidjon","saidjon","saidjon","bekjonboy","saidjon","saidjon","saidjon","bekjonboy","saidjon","saidjon","bekjonboy","saidjon","Alisher","bekjonboy"]))
+  
+    </script>
+  </body>
+</html>

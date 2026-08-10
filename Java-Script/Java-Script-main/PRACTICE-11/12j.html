@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <title>12J</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      /*
+const multiply=(a,b)=>a*b;
+console.log(multiply(2,3));
+console.log(multiply(7,10));
+
+    */
+      /*
+const countPositive = [1,-5,1,-4,9,5]
+
+function positiveNum(){
+
+  let count=0
+
+  countPositive.forEach((num)=>{
+  if(num>0){
+   count++
+  }
+})
+return count
+}
+
+console.log(positiveNum())
+
+*/
+      /*
+function addNum(array,num){
+ 
+ return array.map(val => val+num)
+}
+console.log(addNum([1,2,3,4,5,],5))
+console.log(addNum([0,2,3,4,5,],3))
+*/
+      /*
+function removeEgg(arr){
+  return arr.filter(i => i !=='Egg')
+}
+const chart=['Egg','Apple','banana','hamsdvsd','Egg']
+const result=removeEgg(chart)
+console.log(result)
+*/
+      /*
+function removeEggBegin(arr){
+
+  let count=0
+  return arr.filter((item)=>{
+    if(item==="Egg" && count<2){
+      count++
+      return false
+
+    }
+     return true
+  })
+ 
+}
+const chart=['Egg','Egg','banana','Egg','Egg']
+const result=removeEgg(chart)
+console.log(result)
+*/
+      /*
+function removeEggEnd(arr){
+ let reversedArr=[...arr].reverse()
+  let count=0
+  let filtered=reversedArr.filter((item)=>{
+    if(item==="Egg" && count<2){
+      count++
+      return false
+
+    }
+     return true
+  })
+
+  return filtered.reverse()
+ 
+}
+const chart=['Egg','Egg','banana','Egg','Egg']
+const result=removeEgg(chart)
+console.log(result)
+*/
+    </script>
+  </body>
+</html>

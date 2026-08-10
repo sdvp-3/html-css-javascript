@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* 13. Stringdagi bo'shliqlarni o'chir */
+      function array(str){
+        let result=[];
+        for(let i=0; i<str.length; i++){
+          let rem=str[i].replaceAll(" ", "")
+          result.push(rem)
+        }
+        return result;
+
+      }
+      console.log(array(["how hi good"]))
+    </script>
+  </body>
+</html>

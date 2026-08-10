@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      function minMax(nums) {
+        let min = nums[0];
+        let max = nums[0];
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] < min) {
+            min = nums[i];
+          }
+          if (nums[i] > max) {
+            max = nums[i];
+          }
+        }
+        return [min, max];
+      }
+      console.log(minMax([-1, -8, 5, 19, 21]));
+    </script>
+  </body>
+</html>

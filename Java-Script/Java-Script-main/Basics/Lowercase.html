@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>is same products?</title>
+  </head>
+  <body>
+   
+    <script>
+
+      function toLowerSafe(value) {
+    if (value === null || value === undefined) {
+        return '';
+    }
+    // Convert to string first, then lowercase
+    return String(value).toLowerCase();
+}
+     console.log(toLowerSafe("Hello World!"));
+     
+
+     function repeatString(str, count) {
+    if (count < 0) throw new RangeError("Count must be non-negative");
+    let result = "";
+    for (let i = 0; i < count; i++) {
+        result += str;
+    }
+    return result;
+}
+
+console.log(repeatString("Hi ", 4)); // "Hi Hi Hi Hi "
+
+
+
+
+
+    </script>
+  </body>
+</html>

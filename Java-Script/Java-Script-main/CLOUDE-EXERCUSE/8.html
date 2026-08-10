@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /* 8.  1 dan 100 gacha tub sonlarni chiqar */
+      for(let i=2; i<=100; i++){
+        let istub=true;
+
+        for(let j=2; j<i; j++){
+          if(i%j===0  ){
+            istub=false;
+            break;
+          }
+        }
+        if(istub){
+          console.log(i)
+        }
+   
+      }
+    </script>
+  </body>
+</html>
