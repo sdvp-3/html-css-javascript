@@ -4,8 +4,14 @@
     <title></title>
   </head>
   <body>
+    <h1 id="h1"></h1>
     <script>
       /* 15. String palindrom ekanini tekshir ("racecar" → true) */
+      function isPalindrom(word){
+        let str=String(word)
+        return str===str.split("").reverse().join("")
+      }document.querySelector("#h1").innerHTML=isPalindrom("racecar")
+     
     </script>
   </body>
 </html>

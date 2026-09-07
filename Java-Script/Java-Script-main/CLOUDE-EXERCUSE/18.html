@@ -1,11 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title></title>
   </head>
   <body>
+    <h1 id="h1"></h1>
+    <h1 id="h2"></h1>
     <script>
       /* 18. Stringdagi unli harflarni sana */
+      function findVowles(word) {
+        const matches = word.match(/[aeiouoʻo']/gi);
+        if (matches) {
+          return matches.length;
+        } else {
+          return 0;
+        }
+      }
+
+      document.querySelector('#h1').innerHTML = findVowles('Salom');
+      document.querySelector('#h2').innerHTML = findVowles('Slom');
     </script>
   </body>
 </html>

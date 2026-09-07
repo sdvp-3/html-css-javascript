@@ -6,6 +6,13 @@
   <body>
     <script>
       /* 10. Son palindrom ekanini tekshir (121 → true) */
+      function isPalindrom(num){
+        let str=String(num);
+       return str=== str.split("").reverse().join("")
+      }
+      console.log(isPalindrom("non"))
+       console.log(isPalindrom("kabob"))
+        console.log(isPalindrom(123321))
     </script>
   </body>
 </html>

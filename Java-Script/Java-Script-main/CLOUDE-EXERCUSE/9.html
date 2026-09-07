@@ -4,6 +4,8 @@
     <title></title>
   </head>
   <body>
+    <h1 id="h1"></h1>
+    <h2 id="h2"></h2>
     <script>
       /* 9.  Sonni raqamlarini yig'indisi (123 → 6) */
 
@@ -12,21 +14,25 @@
           .split("")
           .map((x) => Number(x))
           .reduce((sum, x) => sum + x, 0);
+         
       }
-
-      console.log(digitSum(1234567890));
+document.querySelector("#h1").innerHTML=digitSum("123455454545454567890")
+document.querySelector("#h1").style.fontFamily="Arial"
+      console.log(digitSum("12345678923230"));
 
       function digitSUM(nums) {
         let num = 0;
         let str = String(nums);
         let arr = str.split("");
-        a;
+        
         for (let i = 0; i < arr.length; i++) {
           num += Number(arr[i]);
         }
         return num;
       }
-      console.log(digitSUM(1234567890));
+      document.querySelector("#h2").innerHTML=digitSum("1234567890")
+document.querySelector("#h2").style.fontFamily="Arial"
+      console.log(digitSUM("1234567890"));
     </script>
   </body>
 </html>

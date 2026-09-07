@@ -6,7 +6,38 @@
   <body>
     <script>
       /* 1.  1 dan 100 gacha sonlarni chiqar */
-       
+function stringToNum(array){
+  const string=[]
+  for (let i=0; i<array.length;i++){
+    const item=array[i]
+    if (typeof item==='number'){
+string.push(`"${item}"`)
+    }else {
+      string.push(item)
+    }
+  }
+  return string
+}
+const numbers =[1,2,3,4,5,6]
+console.log(stringToNum(numbers))
+
+
+function arrayS(string){
+
+ const arr =[]
+
+for(let i=0; i<string.length; i++){
+ if(typeof string[i]==='number'){
+
+arr.push(String(string[i]))
+ }else {
+      arr.push(string[i])
+    }
+
+}
+return arr
+}
+console.log(arrayS([1,2,3,4]))
     </script>
   </body>
 </html>

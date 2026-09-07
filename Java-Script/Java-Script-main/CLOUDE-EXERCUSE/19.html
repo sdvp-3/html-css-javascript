@@ -4,8 +4,30 @@
     <title></title>
   </head>
   <body>
+    <h1 id="h1"></h1>
+      <h1 id="h2"></h1>
     <script>
       /* 19. Stringdagi har bir so'zning birinchi harfini katta qil */
+      function upperCase(str){
+      return str
+      .split(" ")
+      .map(word => word.charAt(0).toUpperCase()+word.slice(1))
+      .join(" ");
+      }
+  
+     document.querySelector("#h1").innerHTML=upperCase("salom dunyo")
+         
+
+
+     function upperCase1(arr){
+      return arr
+     
+      .map(word1 => word1.charAt(0).toUpperCase()+word1.slice(1))
+      .join(" ");
+      }
+          document.querySelector("#h2").innerHTML=upperCase1(["salom","dunyo"])
+
+    
     </script>
   </body>
 </html>
