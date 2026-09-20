@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Your orders</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="orders.css" />
+    <link
+      rel="stylesheet"
+      href="../javascript-amazon-project-main/STYLES-2/header-section.css"
+    />
+  </head>
+  <body>
+    <div class="head-section">
+      <div class="left-section">
+        <a href="../javascript-amazon-project-main/amazon-html/amazon.html" class="header-link">
+          <img
+            class="amazon-logo-icon"
+            src="../javascript-amazon-project-main/images/amazon-logo-white.png"
+          />
+
+          <img
+            class="amazon-logo-mobile"
+            src="..//javascript-amazon-project-main/images/amazon-mobile-logo-white.png"
+          />
+        </a>
+      </div>
+
+      <div class="mid-section">
+        <input class="search-bar" type="text" placeholder="Search" />
+
+        <button class="search-icon1">
+          <img
+            class="search-icon2"
+            src="..//javascript-amazon-project-main/images/products/icons/search-icon.png"
+          />
+        </button>
+      </div>
+
+      <div class="right-section">
+        <a
+          href="..//javascript-amazon-project-main/checkout.html"
+          class="cart-links"
+        >
+          <img
+            class="amazon-cart-icon"
+            src="..//javascript-amazon-project-main/images/products/icons/cart-icon.png"
+          />
+          <div class="js-cart-quantity cart-quantity">0</div>
+          <div class="cart-text">Cart</div>
+        </a>
+
+        <img
+          class="hamburg-icon"
+          src="..//javascript-amazon-project-main/images/products/icons/hamburger-menu.png"
+        />
+      </div>
+
+      <div class="js-hamburg-menu hamburg-menu">
+        <a class="hamburg-tex" href="../javascript-amazon-project-main/orders.html">Returns & Orders</a>
+        <a class="hamburg-text2" href="..//javascript-amazon-project-main/checkout.html">Item(0)</a>
+      </div>
+    </div>
+    
+
+    <div class="main">
+      <div class="page-title">Your Orders</div>
+
+      <div class="orders-grid-container">
+        <div class="order-header">
+          <div class="delivery-price">
+            <div class="orders-total">
+              <div class="order-place">Order Placed:</div>
+              <div>July 5</div>
+            </div>
+
+            <div class="total-price">
+              <div class="total">Total:</div>
+              <div>$28.57</div>
+            </div>
+          </div>
+
+          <div class="orders-id">
+            <div class="id">Order ID:</div>
+            <div class="id-num">13883065-ddf5-5b88-8c11-7c43f68d119e</div>
+          </div>
+        </div>
+
+        <div class="orders-items-grid">
+          <div>
+            <img
+              class="product-image"
+              src="../javascript-amazon-project-main/images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg"
+            />
+          </div>
+
+          <div class="product-detailes">
+            <div class="product-name">Adults Plain Cotton T-Shirt - 2 Pack</div>
+            <div>Arriving on: July 6</div>
+
+            <div>Quantity:2</div>
+
+            <button class="js-buy-again-text buy-again-text">
+              <img
+                class="buy-again-icon"
+                src="../javascript-amazon-project-main/images/products/icons/buy-again.png"
+              />
+
+              <span class="again-text">Buy it again </span>
+            </button>
+          </div>
+
+          <div><button class="trackapage-buton">Track package</button></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascript-amazon-project-main/SCRIPTS-2/head.js"></script>
+  </body>
+</html>

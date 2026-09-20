@@ -1,0 +1,182 @@
+.main {
+  max-width: 850px;
+  margin-top: 90px;
+  margin-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.order-grid-container {
+  grid-template-columns: 1fr;
+  border: 1px solid rgb(99, 97, 97);
+}
+
+.order-grid-container,
+.order-header,
+.delivery-price,
+.orders-items-grid,
+.product-detailes,
+.order-total,
+.total-price,
+.order-id {
+
+  display: grid;
+}
+
+.order-header {
+  column-gap: 212px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(218, 206, 206);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+}
+
+.delivery-price {
+  grid-template-columns: 1fr 1fr;
+}
+
+.order-total,
+.total-price,
+.order-id {
+
+  grid-template-rows: 1fr 1fr;
+}
+
+.orders-id {
+  text-align: right;
+}
+
+.id {
+  text-align: start;
+  font-weight: bold;
+}
+
+.total,
+.order-place {
+  font-weight: bold;
+}
+
+.orders-items-grid {
+  grid-template-columns: 100px 1fr 1fr;
+  column-gap: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 1px solid rgb(214, 211, 211);
+  border-top: none;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-detailes,
+.product-name {
+  flex-direction: row;
+  row-gap: 10px;
+}
+
+.product-detailes,
+.product-name,
+.order-header,
+.page-title {
+  font-family: arial;
+}
+
+
+.product-name {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.buy-again-icon {
+  height: 25px;
+  width: 25px;
+  margin-right: 5px;
+}
+
+
+.buy-again-text,
+.trackapage-buton {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 140px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(143, 217, 31);
+  color: black;
+}
+
+.trackapage-buton {
+  height: 40px;
+  width: 220px;
+  border: none;
+  box-shadow: 0px 0px 5px rgb(63, 59, 59);
+}
+
+@media(max-width:768px) {
+
+
+  .main,
+  .order-grid-container,
+  .order-header,
+  .delivery-price,
+  .order-id,
+  .orders-items-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .order-header,
+  .delivery-price,
+  .order-id {
+    row-gap: 5px;
+  }
+
+  .orders-total,
+  .total-price,
+  .orders-id {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .orders-items-grid {
+    grid-template-columns: 100px 1fr;
+    row-gap: 20px;
+
+  }
+
+  .buy-again-text,
+  .trackapage-buton {
+    height: 40px;
+    width: 120px;
+  }
+}
+
+.trackapage-buton {
+  margin-left: 130px;
+}
