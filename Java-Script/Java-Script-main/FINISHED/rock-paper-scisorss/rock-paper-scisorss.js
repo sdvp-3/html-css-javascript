@@ -7,114 +7,115 @@ let score = JSON.parse(localStorage.getItem("js-score")) || {
   ties: 0,
 };
 
+const moveImgs = {
+  Rock: '<img class="png-rock1" src="png/rock.png" />',
+  Paper: '<img class="png-paper1" src="png/paper.png" />',
+  Scissors: '<img class="png-scissors1" src="png/scisorss.png" />',
+};
+
+// Kim nimani yutishini oldindan belgilab qo'yamiz.
+const winningRules = {
+  Rock: "Scissors",
+  Paper: "Rock",
+  Scissors: "Paper",
+};
+
+const keyMap = {
+  r: "Rock",
+  p: "Paper",
+  s: "Scissors",
+};
+
 document.querySelector(".js-rock").addEventListener("click", () => {
   playGame("Rock");
 });
+
 document.querySelector(".js-paper").addEventListener("click", () => {
   playGame("Paper");
 });
+
 document.querySelector(".js-scissors").addEventListener("click", () => {
   playGame("Scissors");
 });
+
 document.querySelector(".js-auto").addEventListener("click", autoPlay);
 
 document.body.addEventListener("keydown", (event) => {
-  if (event.key === "r" || event.key === "R") {
-    playGame("Rock");
-  } else if (event.key === "p" || event.key === "P") {
-    playGame("Paper");
-  } else if (event.key === "s" || event.key === "S") {
-    playGame("Scissors");
-  } else if (event.key === "a" || event.key === "A") {
-    autoPlay(); // Avtomat rejim mantiqi
+  const key = event.key.toLowerCase();
+  const move = keyMap[key];
+
+  if (move) {
+    playGame(move);
+  } else if (key === "a") {
+    autoPlay();
   }
 });
 
-function autoPlay() {
-  if (!isAutoPlaying) {
-    intervalId = setInterval(() => {
-      const playerMove = pickComputerMove();
-      playGame(playerMove);
-    }, 1000);
-    isAutoPlaying = true;
-  } else {
-    clearInterval(intervalId);
-    isAutoPlaying = false;
-  }
+function pickComputerMove() {
+  const choices = ["Rock", "Paper", "Scissors"];
+  const randomIndex = Math.floor(Math.random() * choices.length);
+
+  return choices[randomIndex];
 }
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
-  const playerImageSrc = moveImgs[playerMove];
-  const computerImageSrc = moveImgs[computerMove];
+  const result = getGameResult(playerMove, computerMove);
 
-  let result = "";
+  updateScore(result);
+  saveScore();
+  updateGameDisplay(playerMove, computerMove, result);
+}
 
-  if (playerMove === "Rock") {
-    if (computerMove === "Rock") {
-      result = "Tie";
-    } else if (computerMove === "Paper") {
-      result = "Lost";
-    } else if (computerMove === "Scissors") {
-      result = "Win";
-    }
-  } else if (playerMove === "Paper") {
-    if (computerMove === "Rock") {
-      result = "Win";
-    } else if (computerMove === "Paper") {
-      result = "Tie";
-    } else if (computerMove === "Scissors") {
-      result = "Lost";
-    }
-  } else if (playerMove === "Scissors") {
-    if (computerMove === "Rock") {
-      result = "Lost";
-    } else if (computerMove === "Paper") {
-      result = "Win";
-    } else if (computerMove === "Scissors") {
-      result = "Tie";
-    }
+function getGameResult(playerMove, computerMove) {
+  if (playerMove === computerMove) {
+    return "Tie";
   }
+
+  return winningRules[playerMove] === computerMove ? "Win" : "Lost";
+}
+
+function updateScore(result) {
   if (result === "Win") {
     score.wins += 1;
   } else if (result === "Lost") {
     score.losses += 1;
-  } else if (result === "Tie") {
+  } else {
     score.ties += 1;
   }
+}
 
+function saveScore() {
   localStorage.setItem("js-score", JSON.stringify(score));
-  scores();
-  document.querySelector(".js-result").innerHTML = result;
-
-  document.querySelector(".js-move").innerHTML = `👤${playerImageSrc}
-    VS
-    ${computerImageSrc}💻`;
 }
 
-const moveImgs = {
-  Rock: ' <img class="png-rock1" src="png/rock.png" />',
-  Paper: ' <img class="png-paper1" src="png/paper.png" />',
-  Scissors: ' <img class="png-scissors1" src="png/scisorss.png" />',
-};
+function updateGameDisplay(playerMove, computerMove, result) {
+  document.querySelector(".js-result").textContent = result;
 
-function scores() {
-  document.querySelector(".js-score").innerHTML =
-    `🏆:${score.wins},❌:${score.losses},🤝:${score.ties}`;
+  document.querySelector(".js-move").innerHTML = `
+    👤 ${moveImgs[playerMove]} VS ${moveImgs[computerMove]} 💻
+  `;
+
+  updateScoreDisplay();
 }
- 
-function pickComputerMove() {
-  const randomNumber = Math.random();
-  console.log(`Random number:${randomNumber}`);
-  let computerMove = "";
 
-  if (randomNumber > 0 && randomNumber < 0.33) {
-    computerMove = "Rock";
-  } else if (randomNumber > 0.33 && randomNumber < 0.66) {
-    computerMove = "Paper";
-  } else if (randomNumber > 0.66 && randomNumber < 0.99) {
-    computerMove = "Scissors";
+function autoPlay() {
+  if (isAutoPlaying) {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+    return;
   }
 
-  return computerMove;
+  intervalId = setInterval(() => {
+    playGame(pickComputerMove());
+  }, 1000);
+
+  isAutoPlaying = true;
 }
+
+function updateScoreDisplay() {
+  document.querySelector(".js-score").textContent =
+    `🏆: ${score.wins}, ❌: ${score.losses}, 🤝: ${score.ties}`;
+}
+
+updateScoreDisplay();
