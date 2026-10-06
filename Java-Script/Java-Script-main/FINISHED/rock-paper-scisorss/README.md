@@ -1,47 +1,47 @@
 # Rock Paper Scissors
 
-Bu loyiha HTML, CSS va JavaScript yordamida yaratilgan `Rock Paper Scissors` (Tosh, Qog'oz, Qaychi) o'yinidir. Foydalanuvchi tanlagan harakat kompyuter tanloviga qarshi baholanadi va natija hisoblanadi.
+This project is a `Rock Paper Scissors` game created using HTML, CSS, and JavaScript. The player's chosen move is compared with the computer's choice, and the result is displayed and tracked.
 
-## Xususiyatlar
+## Features
 
-- Uchta variant: Rock, Paper, Scissors
-- Kompyuterga qarshi o'yin
-- Natija va hisobni saqlash (`localStorage`)
-- Avto o'yin rejimi
-- Klaviatura bilan boshqarish (`r`, `p`, `s`, `a`)
-- Responsive va zamonaviy interfeys
+- Three options: Rock, Paper, and Scissors
+- Play against the computer
+- Save results and score using `localStorage`
+- Auto Play mode
+- Keyboard controls (`r`, `p`, `s`, `a`)
+- Responsive and modern interface
 
-## Fayllar
+## Files
 
-- `index.html` — o'yin sahifasi
-- `rock-paper-scisorss.css` — dizayn va uslublar
-- `rock-paper-scisorss.js` — o'yin mantiqi
-- `png/` — o'yin tasvirlari
+- `index.html` — the game page
+- `rock-paper-scisorss.css` — design and styles
+- `rock-paper-scisorss.js` — game logic
+- `png/` — game images
 
-## Qanday ishga tushiriladi?
+## How to Run
 
-1. Bu papkadan `index.html` faylini oching.
-2. Brauzerda o'ynang.
-3. Yoki VS Code'da Live Server bilan ishga tushiring.
+1. Open the `index.html` file from this folder.
+2. Play the game in your browser.
+3. Alternatively, run it using Live Server in VS Code.
 
-## Klaviatura boshqaruvi
+## Keyboard Controls
 
 - `R` — Rock
 - `P` — Paper
 - `S` — Scissors
 - `A` — Auto Play
 
-## O'yin qoidalari
+## Game Rules
 
-- Rock => Scissors yutadi
-- Paper => Rock yutadi
-- Scissors => Paper yutadi
-- Bir xil tanlov bo'lsa, durang
+- Rock beats Scissors
+- Paper beats Rock
+- Scissors beats Paper
+- If both players choose the same option, it is a tie
 
 ## Screenshot
 
-Bu loyiha ichida `png/` papkasidagi rasmlar ishlatilgan bo'lib, o'yin tugmalari va natijalar ko'rsatiladi.
+This project uses images from the `png/` folder to display the game buttons and results.
 
-## Muallif
+## Author
 
-Bu loyiha HTML/CSS/JavaScript mashg'ulotlari uchun yaratilgan.
+This project was created for HTML, CSS, and JavaScript practice.
